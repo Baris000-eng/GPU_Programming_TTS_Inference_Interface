@@ -24,36 +24,36 @@ npm i outetts
 
 ## How to Run? 
 
-=> In order to run the project, we need to execute the following commands: 
+In order to run the project, we need to execute the following commands: 
 
 1. cd TTS_Inference_Interface_Project
 2. Then, we need to create a virtual environment. In order to do this, we can use venv or conda. 
 
 * Each command below will create a virtual environment named 'tts_env'.
 
-venv: python (python(python_version)) -m venv tts_env 
+  venv: python (python(python_version)) -m venv tts_env 
 
-conda: conda create --name tts_env
+  conda: conda create --name tts_env
 
 * In order to activate the virtual environment created, we can use one of the following commands: 
 
-venv: source tts_env/bin/activate (Macos or Linux) or .\tts_env\bin\activate (Windows)
+  venv: source tts_env/bin/activate (Macos or Linux) or .\tts_env\bin\activate (Windows)
 
-conda: conda activate tts_env 
+  conda: conda activate tts_env 
 
 Now, we need to install all library dependencies from the requirements.txt file. 
 
 * In order to install them, we can use one of the following commands depending on the package manager used. 
 
-venv: pip install -r requirements.txt 
+  venv: pip install -r requirements.txt 
 
-conda: conda install --file requirements.txt
+  conda: conda install --file requirements.txt
 
 * In order to deactivate the virtual environment created, we can use one of the following commands: 
 
-venv: deactivate (Macos, Linux, or Windows) 
+  venv: deactivate (Macos, Linux, or Windows) 
 
-conda: conda deactivate 
+  conda: conda deactivate 
 
 3. python app.py
 
