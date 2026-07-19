@@ -31,7 +31,7 @@ In order to run the project, we need to execute the following commands:
 
 Each command below will create a virtual environment named 'tts_env'.
 
-venv: python (python_python_version) -m venv tts_env 
+venv: python (python(python_version)) -m venv tts_env 
 
 conda: conda create --name tts_env
 
