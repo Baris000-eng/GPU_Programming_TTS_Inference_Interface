@@ -24,7 +24,7 @@ npm i outetts
 
 ## How to Run? 
 
-* In order to run the project, we need to execute the following commands: 
+=> In order to run the project, we need to execute the following commands: 
 
 1. cd TTS_Inference_Interface_Project
 2. Then, we need to create a virtual environment. In order to do this, we can use venv or conda. 
