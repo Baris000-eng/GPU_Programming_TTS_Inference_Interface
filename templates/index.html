@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebGPU Text-to-Speech (TTS) Project</title>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='tts_styles.css') }}">
+</head>
+<body>
+
+    <h1>WebGPU-Powered and Human-Centric <br> Text-to-Speech Inference</h1>
+    
+    <div id="status">Initializing WebGPU and TTS Model ... Please wait.</div>
+
+    <div class="card">
+        <h3>Text Content Source</h3>
+        <label for="fileInput">Upload File (.pdf, .docx, .txt):</label>
+        <input type="file" id="fileInput" accept=".txt,.docx,.pdf" style="margin-bottom: 15px;"><br/>
+        
+        <label for="textInput">Text Content to Read:</label>
+        <textarea id="textInput" placeholder="Type text here or upload a document file above..."></textarea>
+    </div>
+
+    <div class="card">
+        <h3>Hyperparameter Settings</h3>
+        <div class="grid">
+            <div>
+                <label for="speakerSelect">Voice Speaker Tone Gender Profile:</label>
+                    <select id="speakerSelect">
+                        <option value="female_1">Female 1 (Corporate & Stable)</option>
+                        <option value="male_1">Male 1 (Standard & Balanced)</option>
+                        <option value="female_2">Female 2 (Energetic & High)</option>
+                        <option value="male_2">Male 2 (Deep & Low)</option>
+                    </select>
+            </div>
+            <div>
+                <label for="temperatureInput">Temperature (Recommended Range for Tone Stability: 0.1 - 1.0, Min: 0.01 and Max: 1.5):</label>
+                <input type="number" id="temperatureInput" value="0.1" step="0.01" min="0.01" max="1.5">
+            </div>
+        </div>
+        <div class="grid">
+            <div>
+                <label for="penaltyInput">Repetition Penalty (Min: 1.1 and Max: 2.0):</label>
+                <input type="number" id="penaltyInput" value="1.5" step="0.01" min="1.1" max="2.0">
+            </div>
+            <div>
+                <label for="maxLengthInput">Max Generation Length (Number of Tokens, Min: 64 and Max: 4096):</label>
+                <input type="number" id="maxLengthInput" value="2048" step="1" min="64" max="4096">
+            </div>
+        </div>
+    </div>
+
+    <button id="generateBtn" disabled>Generate Speech via WebGPU</button>
+
+    <div class="card" id="outputCard" style="display:none;">
+        <h3>Generated Audio Output</h3>
+        <audio id="audioPlayer" controls></audio>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+    
+    <script>
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
+    </script>
+
+    <script src="tts_main.js" type="module"></script>
+</body>
+</html>

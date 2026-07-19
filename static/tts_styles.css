@@ -1,0 +1,222 @@
+:root {
+    --bg-color: lightgray;
+    --card-bg: lightgreen;
+    --text-main: black;
+    --text-muted: #4b5563;
+    --primary: lightblue;
+    --primary-hover: skyblue;
+    --primary-disabled: lightblue;
+    --success-bg: #dcfce7;
+    --success-text: #166534;
+    --error-bg: #fee2e2;
+    --error-text: darkred;
+    --border: black;
+    --radius: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.5;
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 0 24px;
+}
+
+h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 24px;
+    color: var(--text-main);
+    letter-spacing: -0.025em;
+}
+
+#status {
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+    padding: 14px 20px;
+    border-radius: var(--radius);
+    background-color: #eff6ff;
+    color: #1e40af;
+    text-align: center;
+    border: 1px solid rgba(30, 64, 175, 0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+#status[style*="background: #dcfce7"] {
+    background-color: var(--success-bg) !important;
+    color: var(--success-text) !important;
+    border-color: rgba(22, 101, 52, 0.1);
+}
+
+#status[style*="background: #fee2e2"] {
+    background-color: var(--error-bg) !important;
+    color: var(--error-text) !important;
+    border-color: rgba(153, 27, 27, 0.1);
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 28px;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    margin-bottom: 24px;
+    border: 1px solid var(--border);
+}
+
+.card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: var(--text-main);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 16px;
+}
+
+@media (max-width: 640px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+input[type="number"], 
+select, 
+textarea, 
+input[type="file"] {
+    width: 100%;
+    padding: 11px 14px;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    background-color: #fafafa;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    outline: none;
+}
+
+input[type="file"] {
+    background: #ffffff;
+    cursor: pointer;
+    padding: 8px 12px;
+}
+
+input[type="file"]::file-selector-button {
+    background: #f3f4f6;
+    border: 1px solid #d1d5db;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 12px;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background: #e5e7eb;
+}
+
+input[type="number"]:focus, 
+select:focus, 
+textarea:focus {
+    border-color: var(--primary);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+}
+
+textarea {
+    height: 140px;
+    resize: vertical;
+    font-family: inherit;
+    line-height: 1.6;
+}
+
+button#generateBtn {
+    background-color: var(--primary);
+    color: black;
+    border: none;
+    padding: 16px 24px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.05rem;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+    margin-bottom: 30px;
+}
+
+button#generateBtn:hover:not(:disabled) {
+    background-color: var(--primary-hover);
+    box-shadow: 0 6px 16px rgba(79, 70, 229, 0.35);
+}
+
+button#generateBtn:active:not(:disabled) {
+    transform: translateY(1px);
+}
+
+button#generateBtn:disabled {
+    background-color: var(--primary-disabled);
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+#outputCard {
+    animation: fadeIn 0.4s ease-out;
+}
+
+audio {
+    width: 100%;
+    margin-top: 8px;
+    border-radius: 24px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn-primary {
+  background-color: blue;
+  color: white;
+  border: 1px solid black;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: darkblue;
+}
+
+.btn-primary:disabled {
+  background-color: gray;
+  cursor: default;
+}
