@@ -51,7 +51,7 @@ Now, we need to install all library dependencies from the requirements.txt file.
 
 * In order to deactivate the virtual environment created, we can use one of the following commands: 
 
-  venv: deactivate (Macos, Linux, or Windows) 
+  venv: deactivate 
 
   conda: conda deactivate 
 
