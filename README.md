@@ -7,6 +7,7 @@ content. A user can either type/copy-paste text content in the textbox area, or 
 
 ## Installation
 Firstly, we need to install the outetts library from the NPM package manager using the command below: 
+
 npm i outetts
 
 "outetts" is the library used in the text-to-speech process. 
